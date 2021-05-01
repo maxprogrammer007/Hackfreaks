@@ -52,21 +52,22 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hi {}, I am Group Manager of @sagacious_unacademians! 
+Hi {}, I am {}!. 
+A Group Manager of @sagacious_unacademians
 I am a Pro group management bot, with some Special features.
  
-Hosted in Heroku with ElephantSQL Database,
+Hosted in Heroku with PostgresSQL Database,
 I Can make your group management fun and easy!
 Press or type /help to Get to know about my Modules
 ==========================
 
 
-Maintained by @MaskedVirus
+Developed by @MaskedVirus and Maintained by @MaxProgrammer007
 Wanna Add me to your Group? Just click the button below!
 """
 
 HELP_STRINGS = """
-Hello there!.
+Hello there!. i am *{}*
 Have a look at the following for an idea of some of \
 the things I can help you with.
 
