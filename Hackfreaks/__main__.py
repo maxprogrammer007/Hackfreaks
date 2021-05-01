@@ -207,8 +207,8 @@ def start(update: Update, context: CallbackContext):
                               text="Learning Group",
                               url=f"https://t.me/sagacious_unacademians"),
                               InlineKeyboardButton(
-                              text="Developer",
-                              url="https://t.me/MaskedVirus")
+                              text="Source Code",
+                              url="https://github.com/swatv3nub/Hackfreaks")
                           ]])) 
     else:
         update.effective_message.reply_text(
