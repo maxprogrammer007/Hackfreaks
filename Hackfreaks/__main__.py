@@ -52,25 +52,21 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hi {}, my name is {}! 
+Hi {}, I am Group Manager of @sagacious_unacademians! 
 I am a Pro group management bot, with some Special features.
  
 Hosted in Heroku with ElephantSQL Database,
 I Can make your group management fun and easy!
 Press or type /help to Get to know about my Modules
 ==========================
-✗ Updates Channel 
-- @HackfreaksUpdates
 
-✗ Support Group 
-- @HackfreaksSupport
 
 Maintained by @MaskedVirus
 Wanna Add me to your Group? Just click the button below!
 """
 
 HELP_STRINGS = """
-Hello there! My name is *{}*.
+Hello there!.
 Have a look at the following for an idea of some of \
 the things I can help you with.
 
@@ -97,7 +93,7 @@ I will update this String.
 """
 
 ABOUT_TEXT = """
-*Hackfreaks - An Advanced Group Manager*
+*Sagacious Manager - An Advanced Group Manager*
 Build to Manage Your Groups Easily!
 
 You Can Get Full Help Menu 
@@ -106,26 +102,27 @@ By Typing /help
 Hope you are satisfied with my service.
 If you like you can donate some money too💰, Haha.
 
-Report Bugs/Error At @HackfreaksSupport
+
 """
 
 ABOUTME_STRINGS = """
-<b>I Am Hackfreaks</b>
+<b>I Am Sagacious Manager</b>
 A Python Based Group-Manager
 Bot!
 
-<b>My Owner:</b>
+<b>My Developer:</b>
 ➥ @MaskedVirus
 <b>Co-Dev:</b>
 ➥ @okay_retard
+<b>Editor:</b>
+➥@maxprogrammer007
 
 Based on Paul's Marie Bot
 
 Thanks To All Who Made Me
 That Much To Manage Your Groups!
 
-Updates Channel: @HackfreaksUpdates
-Support Chat: @HackfreaksSupport
+
 """
 
 TERMS_STRINGS = """
@@ -141,7 +138,7 @@ Are Saved Here!
 Or Anyone Doing Wrong Things
 Report Us At-> @HackfreaksSupport
 
-*Updates Channel: @HackfreaksUpdates*
+
 """
 
 
@@ -241,7 +238,7 @@ def start(update: Update, context: CallbackContext):
                           [[
                               InlineKeyboardButton(
                               text="Add To Your Group 👥",
-                              url="t.me/MrHackfreaksRobot?startgroup=true"),
+                              url="t.me/sagacious_unacademians_bot?startgroup=true"),
                               InlineKeyboardButton(
                               text="Source Code ✨",
                               url="https://github.com/swatv3nub/Hackfreaks")
@@ -278,7 +275,7 @@ def terms_menu(update: Update, context: CallbackContext):
 def aboutme_bot_menu(update: Update, context: CallbackContext):
     
     update.effective_message.edit_text(ABOUTME_STRINGS, parse_mode='html', reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="Updates Channel", url="t.me/HackfreaksUpdates"), InlineKeyboardButton(text="Support Group", url="t.me/HackfreaksSupport")], [InlineKeyboardButton(text="Global Ban Logs", url="t.me/HackfreaksLogs"), InlineKeyboardButton(text="Go Back", callback_data="guide_menu")]]))
+                                                [[ InlineKeyboardButton(text="Support Group", url="t.me/sagacious_unacademians")], [ InlineKeyboardButton(text="Go Back", callback_data="guide_menu")]]))
 
 
 @run_async
@@ -391,13 +388,13 @@ def get_help(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton(
                     text="Help",
-                    url="t.me/{}?start=help".format(context.bot.username))
+                    url="t.me/sagacious_unacademians_bot?start=help".format(context.bot.username))
             ]]))
         return
 
     elif len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
         module = args[1].lower()
-        text = "Here is the available help for the *{}* module:\n".format(HELPABLE[module].__mod_name__) \
+        text = "Here is the available help for the Sagacious Manager module:\n".format(HELPABLE[module].__mod_name__) \
                + HELPABLE[module].__help__
         send_help(
             chat.id, text,
@@ -457,7 +454,7 @@ def settings_button(update: Update, context: CallbackContext):
             chat_id = mod_match.group(1)
             module = mod_match.group(2)
             chat = bot.get_chat(chat_id)
-            text = "*{}* has the following settings for the *{}* module:\n\n".format(escape_markdown(chat.title),
+            text = "Sagacious Manager has the following settings for the *{}* module:\n\n".format(escape_markdown(chat.title),
                                                                                      CHAT_SETTINGS[module].__mod_name__) + \
                    CHAT_SETTINGS[module].__chat_settings__(chat_id, user.id)
             query.message.reply_text(
@@ -531,7 +528,7 @@ def get_settings(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton(
                         text="Settings",
-                        url="t.me/{}?start=stngs_{}".format(
+                        url="t.me/sagacious_unacademians_bot?start=stngs_{}".format(
                             context.bot.username, chat.id))
                 ]]))
         else:
